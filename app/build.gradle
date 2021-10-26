@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+
+    // 引入插件
     id 'version-catalog'
     id 'maven-publish'
 }
@@ -36,7 +38,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.4.0'
@@ -48,6 +49,7 @@ dependencies {
     implementation libs.retrofit
 }
 
+// 定义目录
 catalog {
     // 在此块中声明别名、包和版本
     versionCatalog {
@@ -55,10 +57,11 @@ catalog {
     }
 }
 
+// 发布插件以实现共享
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.zj.catalog'
+            groupId = 'com.simplation.catalog'
             artifactId = 'catalog'
             version = '1.0.0'
             from components.versionCatalog
