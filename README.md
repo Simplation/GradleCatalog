@@ -1,0 +1,2 @@
+# GradleCatalog
+Version Catalog
