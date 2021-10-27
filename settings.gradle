@@ -3,6 +3,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
     }
 }
 rootProject.name = "GradleCatalog"
@@ -14,7 +15,11 @@ enableFeaturePreview("VERSION_CATALOGS")
 dependencyResolutionManagement {
     versionCatalogs {
         libs {
+            // 使用本地源文件
             from(files("libs.versions.toml"))
+            // 使用远程仓库的地址
+            // 如果使用远程仓库地址，可以移除本地的 `toml` 文件
+            // from("com.simplation.catalog:catalog:1.0.0")
         }
     }
 }

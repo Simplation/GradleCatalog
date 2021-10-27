@@ -1,17 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'version-catalog'
-    id 'maven-publish'
 }
 
 android {
-    compileSdk libs.versions.compilesdk.get().toInteger()
+    compileSdk 30
 
     defaultConfig {
         applicationId "com.simplation.gradlecatalog"
         minSdk 21
-        targetSdk libs.versions.targetsdk.get().toInteger()
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 
@@ -48,20 +46,3 @@ dependencies {
     implementation libs.retrofit
 }
 
-catalog {
-    // 在此块中声明别名、包和版本
-    versionCatalog {
-        from files("../libs.versions.toml")
-    }
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.zj.catalog'
-            artifactId = 'catalog'
-            version = '1.0.0'
-            from components.versionCatalog
-        }
-    }
-}

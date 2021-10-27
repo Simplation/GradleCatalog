@@ -16,10 +16,3 @@ groovy = ["groovy-core", "groovy-json", "groovy-nio"]
 
 #[plugins]
 #jmh = { id = "me.champeau.jmh", version = "0.6.5" }
-
-# TOML 文件主要由 4 个部分组成：
-# [versions]   部分用于声明可以被依赖项引用的版本。
-# [libraries]  部分用于声明 Library 的别名。
-# [bundles]    部分用于声明依赖包。
-# [plugins]    部分用于声明插件。
-
